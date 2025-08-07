@@ -9,8 +9,6 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from 
 import { Badge } from "./components/ui/badge";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
-import { Toaster } from "./components/ui/toaster";
-import { useToast } from "./components/ui/use-toast";
 import { 
   Clock, 
   MapPin, 
@@ -34,12 +32,17 @@ function App() {
   const [selectedMachine, setSelectedMachine] = useState(null);
   const [isAdminOpen, setIsAdminOpen] = useState(false);
   const [loading, setLoading] = useState(true);
-  const { toast } = useToast();
+  const [message, setMessage] = useState("");
 
   // Form states
   const [studentName, setStudentName] = useState("");
   const [studentRoom, setStudentRoom] = useState("");
   const [duration, setDuration] = useState(60);
+
+  const showMessage = (msg, type = "info") => {
+    setMessage(msg);
+    setTimeout(() => setMessage(""), 3000);
+  };
 
   const fetchData = async () => {
     try {
@@ -55,11 +58,7 @@ function App() {
       setLoading(false);
     } catch (error) {
       console.error('Error fetching data:', error);
-      toast({
-        title: "Error",
-        description: "Failed to fetch data from server",
-        variant: "destructive"
-      });
+      showMessage("เกิดข้อผิดพลาดในการโหลดข้อมูล", "error");
       setLoading(false);
     }
   };
@@ -70,33 +69,6 @@ function App() {
     return () => clearInterval(interval);
   }, []);
 
-  const getStatusColor = (status) => {
-    switch (status) {
-      case 'available': return 'bg-green-500 hover:bg-green-600';
-      case 'in_use': return 'bg-red-500 hover:bg-red-600';
-      case 'out_of_order': return 'bg-gray-500 hover:bg-gray-600';
-      default: return 'bg-gray-300';
-    }
-  };
-
-  const getStatusIcon = (status) => {
-    switch (status) {
-      case 'available': return <CheckCircle className="h-5 w-5 text-green-500" />;
-      case 'in_use': return <Clock className="h-5 w-5 text-red-500" />;
-      case 'out_of_order': return <AlertTriangle className="h-5 w-5 text-gray-500" />;
-      default: return null;
-    }
-  };
-
-  const getStatusText = (status) => {
-    switch (status) {
-      case 'available': return 'ว่าง';
-      case 'in_use': return 'กำลังใช้งาน';
-      case 'out_of_order': return 'เสีย';
-      default: return status;
-    }
-  };
-
   const handleBookMachine = async () => {
     try {
       await axios.post(`${API}/bookings`, {
@@ -106,10 +78,7 @@ function App() {
         duration: parseInt(duration)
       });
 
-      toast({
-        title: "จองเครื่องสำเร็จ!",
-        description: `จองเครื่องซักผ้าเลขที่ ${selectedMachine.machine_number} สำเร็จแล้ว`,
-      });
+      showMessage(`จองเครื่องซักผ้าเลขที่ ${selectedMachine.machine_number} สำเร็จแล้ว`, "success");
 
       setIsBookingOpen(false);
       setStudentName("");
@@ -117,45 +86,27 @@ function App() {
       setDuration(60);
       fetchData();
     } catch (error) {
-      toast({
-        title: "เกิดข้อผิดพลาด",
-        description: error.response?.data?.detail || "ไม่สามารถจองเครื่องได้",
-        variant: "destructive"
-      });
+      showMessage(error.response?.data?.detail || "ไม่สามารถจองเครื่องได้", "error");
     }
   };
 
   const handleCompleteBooking = async (bookingId) => {
     try {
       await axios.put(`${API}/bookings/${bookingId}/complete`);
-      toast({
-        title: "เสร็จสิ้น",
-        description: "การซักผ้าเสร็จสิ้นแล้ว",
-      });
+      showMessage("การซักผ้าเสร็จสิ้นแล้ว", "success");
       fetchData();
     } catch (error) {
-      toast({
-        title: "เกิดข้อผิดพลาด",
-        description: "ไม่สามารถอัพเดทสถานะได้",
-        variant: "destructive"
-      });
+      showMessage("ไม่สามารถอัพเดทสถานะได้", "error");
     }
   };
 
   const handleUpdateMachineStatus = async (machineId, status) => {
     try {
       await axios.put(`${API}/machines/${machineId}`, { status });
-      toast({
-        title: "อัพเดทสำเร็จ",
-        description: "อัพเดทสถานะเครื่องซักผ้าแล้ว",
-      });
+      showMessage("อัพเดทสถานะเครื่องซักผ้าแล้ว", "success");
       fetchData();
     } catch (error) {
-      toast({
-        title: "เกิดข้อผิดพลาด",
-        description: "ไม่สามารถอัพเดทสถานะได้",
-        variant: "destructive"
-      });
+      showMessage("ไม่สามารถอัพเดทสถานะได้", "error");
     }
   };
 
@@ -225,6 +176,15 @@ function App() {
           </div>
         </div>
       </header>
+
+      {/* Message */}
+      {message && (
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="bg-indigo-100 border-l-4 border-indigo-500 p-4 rounded">
+            <p className="text-indigo-800">{message}</p>
+          </div>
+        </div>
+      )}
 
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Statistics */}
@@ -339,8 +299,6 @@ function App() {
           </DialogContent>
         </Dialog>
       </main>
-      
-      <Toaster />
     </div>
   );
 }
