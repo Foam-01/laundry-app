@@ -232,7 +232,7 @@ function App() {
           <StatsCard 
             title="เครื่องทั้งหมด" 
             value={stats.total_machines || 0} 
-            icon={<Washing className="h-6 w-6" />}
+            icon={<RefreshCw className="h-6 w-6" />}
             color="bg-blue-500"
           />
           <StatsCard 
