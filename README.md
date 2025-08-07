@@ -55,23 +55,8 @@ Supports machine status display, advance booking, admin dashboard, and usage sta
 ## 📋 Application Structure
 ---
 
-Laundry Management System/
-├── Frontend (React)
-│ ├── Machine Status Display
-│ ├── Booking System
-│ ├── Admin Dashboard
-│ └── Usage Statistics
-│
-├── Backend (FastAPI)
-│ ├── Machine Management API
-│ ├── Booking API
-│ ├── Statistics API
-│ └── Admin System
-│
-└── Database (MongoDB)
-├── Machine Data
-├── Booking Data
-└── Usage Statistics
+<img width="1007" height="461" alt="image" src="https://github.com/user-attachments/assets/28940005-7f65-4937-84cc-4d5666ad767e" />
+
 
 ---
 
