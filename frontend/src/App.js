@@ -11,7 +11,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "./components/ui/tabs";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "./components/ui/select";
 import { Toaster } from "./components/ui/toaster";
 import { 
-  Washing, 
   Clock, 
   MapPin, 
   User, 
