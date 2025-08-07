@@ -1,74 +1,112 @@
-<<<<<<< HEAD
-# Here are your Instructions
-=======
-# Getting Started with Create React App
+# 🧺 Laundry Management System
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+An application for managing laundry machines and services.  
+Supports machine status display, advance booking, admin dashboard, and usage statistics.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🛠️ Technologies Used
 
-### `npm start`
+### 🖥️ Frontend (Web/UI)
+- **React.js** - JavaScript framework for building user interfaces  
+- **Tailwind CSS** - For design and styling  
+- **Shadcn/ui** - UI components library (buttons, cards, forms)  
+- **Lucide React** - Beautiful icons  
+- **Axios** - For API requests  
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### ⚙️ Backend (Server)
+- **FastAPI** - Python framework for creating REST APIs  
+- **Pydantic** - For data validation  
+- **Python** - Primary programming language  
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### 🗄️ Database
+- **MongoDB** - NoSQL database for storing machine and booking data  
+- **Motor** - Async MongoDB driver for Python  
 
-### `npm test`
+### 🎨 Design & UX
+- **Responsive Design** - Works well on both mobile and desktop  
+- **Thai Language Support** - Full Thai language support  
+- **Color Coding System** - Green = Available, Red = In use, Gray = Out of order  
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### 🔧 Development Tools
+- **Vite** - Build tool for React  
+- **ESLint** - Code quality checker  
+- **PostCSS** - CSS processor  
 
-### `npm run build`
+### ☁️ Deployment
+- **Emergent Platform** - Cloud hosting  
+- **Docker** - Containerization  
+- **Nginx** - Web server  
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
+## 🖥️ Screenshots
+<img width="1915" height="954" alt="image" src="https://github.com/user-attachments/assets/3ee0a966-e711-42bb-9a97-ee9b6bb54d4d" />
+<img width="1899" height="960" alt="image" src="https://github.com/user-attachments/assets/d01a77fb-d0eb-4e97-8bcf-b18359a86330" />
+<img width="1899" height="970" alt="image" src="https://github.com/user-attachments/assets/236f03af-7891-42ce-91e0-81105473267a" />
+<img width="1902" height="966" alt="image" src="https://github.com/user-attachments/assets/0a98a4b6-c332-4449-9c9c-1a4d17c043dc" />
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 🔗 Demo & Repository
+- Live Demo: [https://your-live-demo-link.com  ](https://laundry-add.netlify.app/)
+- GitHub: https://github.com/Foam-01/pos-inventory-system
+---
+## 📋 Application Structure
+---
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Laundry Management System/
+├── Frontend (React)
+│ ├── Machine Status Display
+│ ├── Booking System
+│ ├── Admin Dashboard
+│ └── Usage Statistics
+│
+├── Backend (FastAPI)
+│ ├── Machine Management API
+│ ├── Booking API
+│ ├── Statistics API
+│ └── Admin System
+│
+└── Database (MongoDB)
+├── Machine Data
+├── Booking Data
+└── Usage Statistics
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## ⚡ Features
+- ✅ Real-time Updates - Data refreshes every 30 seconds  
+- ✅ Responsive Design - Fully mobile-friendly  
+- ✅ Admin Panel - Manage system settings  
+- ✅ Booking System - Reserve machines in advance  
+- ✅ Statistics Dashboard - View usage statistics  
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## 🎯 Why These Technologies?
+- **React** - Popular with a large community  
+- **FastAPI** - Fast with automatic documentation  
+- **MongoDB** - Flexible, suitable for this type of data  
+- **Tailwind** - Quickly build beautiful UIs  
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## 🏁 Getting Started
 
-### Code Splitting
+```bash
+git clone https://github.com/Foam-01/laundry-app.git
+cd laundry-app
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Install frontend dependencies
+npm install   # or yarn install
 
-### Analyzing the Bundle Size
+# Install backend dependencies
+pip install -r requirements.txt
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+# Run frontend
+npm run dev
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
->>>>>>> 84335eb (Initial commit)
+# Run backend
+uvicorn backend.main:app --reload
+```
