@@ -45,6 +45,8 @@ Supports machine status display, advance booking, admin dashboard, and usage sta
 <img width="1899" height="960" alt="image" src="https://github.com/user-attachments/assets/d01a77fb-d0eb-4e97-8bcf-b18359a86330" />
 <img width="1899" height="970" alt="image" src="https://github.com/user-attachments/assets/236f03af-7891-42ce-91e0-81105473267a" />
 <img width="1902" height="966" alt="image" src="https://github.com/user-attachments/assets/0a98a4b6-c332-4449-9c9c-1a4d17c043dc" />
+<img width="1900" height="953" alt="image" src="https://github.com/user-attachments/assets/3f8c1372-56b5-4c43-a9ec-f32ee6fd98a6" />
+<img width="1904" height="953" alt="image" src="https://github.com/user-attachments/assets/a8a6d13c-9438-474c-8186-f67e30d03956" />
 
 ---
 
