@@ -50,7 +50,7 @@ Supports machine status display, advance booking, admin dashboard, and usage sta
 
 ## 🔗 Demo & Repository
 - Live Demo: [https://your-live-demo-link.com  ](https://laundry-add.netlify.app/)
-- GitHub: https://github.com/Foam-01/pos-inventory-system
+- GitHub: [https://github.com/Foam-01/pos-inventory-system](https://github.com/Foam-01/laundry-app)
 ---
 ## 📋 Application Structure
 ---
