@@ -184,7 +184,7 @@ function App() {
           <div className="flex items-center justify-between">
             <div className="flex items-center space-x-3">
               <div className="bg-indigo-600 p-3 rounded-xl">
-                <Washing className="h-8 w-8 text-white" />
+                <RefreshCw className="h-8 w-8 text-white" />
               </div>
               <div>
                 <h1 className="text-3xl font-bold text-gray-900">ระบบจัดการซักผ้า</h1>
